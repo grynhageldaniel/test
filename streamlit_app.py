@@ -3,6 +3,12 @@ import altair as alt
 import math
 import pandas as pd
 import streamlit as st
+from st_aggrid import AgGrid
+import pandas as pd
+
+df = pd.read_csv('https://raw.githubusercontent.com/fivethirtyeight/data/master/airline-safety/airline-safety.csv')
+AgGrid(df)
+
 
 with st.echo(code_location='below'):
     total_points = st.slider("Number of points in spiral", 1, 5000, 2000)
